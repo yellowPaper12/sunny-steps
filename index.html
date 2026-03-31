@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunny Steps – Learning App</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="app">
+  <div id="confetti-container"></div>
+
+  <!-- ═══════════════ HOME SCREEN ═══════════════ -->
+  <div id="screen-home" class="screen active">
+    <header class="home-header">
+      <div class="mascot" id="mascot-anim">🌻</div>
+      <h1 class="app-title">Sunny Steps</h1>
+      <p class="app-sub">Learning is fun — one step at a time!</p>
+    </header>
+
+    <section class="mode-section">
+      <p class="section-label">Choose how you want to play:</p>
+      <div class="mode-row">
+        <button class="mode-btn child active" id="mode-child" onclick="setMode('child')">
+          <span class="mode-icon">👦</span>
+          <span class="mode-name">Child Mode</span>
+          <span class="mode-desc">I play by myself!</span>
+        </button>
+        <button class="mode-btn guide" id="mode-guide" onclick="setMode('guide')">
+          <span class="mode-icon">👩‍🏫</span>
+          <span class="mode-name">Guide Mode</span>
+          <span class="mode-desc">Teacher / Caregiver</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="worlds-section">
+      <p class="section-label">✨ Choose a Learning World:</p>
+      <div class="worlds-grid">
+        <div class="world-card wc-numbers" onclick="startWorld('numbers')" tabindex="0" role="button" aria-label="Numbers and Colors world">
+          <span class="w-icon">🔢</span>
+          <div class="w-name">Numbers &amp; Colors</div>
+          <div class="w-sub">Count &amp; match!</div>
+          <div class="w-stars" id="stars-numbers">☆☆☆</div>
+        </div>
+        <div class="world-card wc-abc" onclick="startWorld('abc')" tabindex="0" role="button" aria-label="ABCs world">
+          <span class="w-icon">🔤</span>
+          <div class="w-name">ABCs</div>
+          <div class="w-sub">Letters &amp; words!</div>
+          <div class="w-stars" id="stars-abc">☆☆☆</div>
+        </div>
+        <div class="world-card wc-feelings" onclick="startWorld('feelings')" tabindex="0" role="button" aria-label="Feelings world">
+          <span class="w-icon">😊</span>
+          <div class="w-name">Feelings</div>
+          <div class="w-sub">How do you feel?</div>
+          <div class="w-stars" id="stars-feelings">☆☆☆</div>
+        </div>
+        <div class="world-card wc-shapes" onclick="startWorld('shapes')" tabindex="0" role="button" aria-label="Shapes world">
+          <span class="w-icon">🔷</span>
+          <div class="w-name">Shapes</div>
+          <div class="w-sub">Find the shape!</div>
+          <div class="w-stars" id="stars-shapes">☆☆☆</div>
+        </div>
+        <div class="world-card wc-social" onclick="startWorld('social')" tabindex="0" role="button" aria-label="Social skills world">
+          <span class="w-icon">🤝</span>
+          <div class="w-name">Friends &amp; Sharing</div>
+          <div class="w-sub">Be a good friend!</div>
+          <div class="w-stars" id="stars-social">☆☆☆</div>
+        </div>
+        <div class="world-card wc-animals" onclick="startWorld('animals')" tabindex="0" role="button" aria-label="Animals world">
+          <span class="w-icon">🐾</span>
+          <div class="w-name">Animals</div>
+          <div class="w-sub">Who says that?</div>
+          <div class="w-stars" id="stars-animals">☆☆☆</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="home-footer">
+      <p>Made with ❤️ for children with Down syndrome and their families</p>
+    </footer>
+  </div>
+
+  <!-- ═══════════════ GAME SCREEN ═══════════════ -->
+  <div id="screen-game" class="screen">
+    <div class="game-header">
+      <button class="back-btn" onclick="goHome()" aria-label="Go back home">←</button>
+      <div class="game-title-wrap">
+        <div id="game-title" class="game-title"></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div id="q-counter" class="q-counter"></div>
+      </div>
+    </div>
+
+    <div id="score-row" class="score-row">
+      <span id="score-display">⭐ 0</span>
+    </div>
+
+    <div id="guide-tip-box" class="guide-tip" role="note"></div>
+
+    <div class="question-card" id="question-card">
+      <span id="q-icon" class="q-icon" role="img"></span>
+      <div id="q-text" class="q-text"></div>
+      <div id="q-sub" class="q-sub"></div>
+    </div>
+
+    <div id="choices" class="choices-grid" role="group" aria-label="Answer choices"></div>
+
+    <div id="feedback-bar" class="feedback-bar" aria-live="polite"></div>
+  </div>
+
+  <!-- ═══════════════ RESULT SCREEN ═══════════════ -->
+  <div id="screen-result" class="screen result-screen">
+    <div id="result-icon" class="result-icon"></div>
+    <div id="result-msg" class="result-msg"></div>
+    <div id="result-sub" class="result-sub"></div>
+    <div id="result-stars" class="stars"></div>
+    <div id="result-detail" class="result-detail"></div>
+    <div class="result-btns">
+      <button class="big-btn btn-orange" onclick="replayWorld()">Play Again 🎉</button>
+      <button class="big-btn btn-gray" onclick="goHome()">Home 🏠</button>
+    </div>
+  </div>
+
+</div><!-- /#app -->
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
