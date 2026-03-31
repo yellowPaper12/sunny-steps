@@ -1,39 +1,39 @@
-# 🌻 Sunny Steps
+# Sunny Steps
 
-**An interactive learning app for young children with Down syndrome (ages 4–8)**
+**An interactive learning app for young children with Down syndrome from ages 4–8**
 
-Sunny Steps is a warm, accessible, and joyful web app that helps children learn core skills through gentle games and positive reinforcement. Designed with caregivers and educators in mind.
+Sunny Steps is a warm, accessible, and joyful web app that helps children learn core skills through gentle games and positive reinforcement. 
 
 ---
 
-## 🎮 What's Inside
+##  What's Inside
 
 | World | Topic | Skills |
 |-------|-------|--------|
-| 🔢 Numbers & Colors | Counting 1–5, color names | Math readiness, visual recognition |
-| 🔤 ABCs | Letters A–H, first sounds | Phonics, literacy foundations |
-| 😊 Feelings | Emotion faces | Emotional literacy, self-awareness |
-| 🔷 Shapes | Circle, triangle, square, star | Spatial reasoning, geometry |
-| 🤝 Friends & Sharing | Greetings, sharing, turn-taking | Social skills, empathy |
-| 🐾 Animals | Animal names, sounds, habitats | Language, curiosity |
+| Numbers & Colors | Counting 1–5, color names | Math readiness, visual recognition |
+| ABCs | Letters A–H, first sounds | Phonics, literacy foundations |
+| Feelings | Emotion faces | Emotional literacy, self-awareness |
+| Shapes | Circle, triangle, square, star | Spatial reasoning, geometry |
+| Friends & Sharing | Greetings, sharing, turn-taking | Social skills, empathy |
+| Animals | Animal names, sounds, habitats | Language, curiosity |
 
 **48 total questions** (8 per world), shuffled each session.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Child Mode** — big buttons, no time pressure, celebratory confetti on correct answers
 - **Guide Mode** — shows a tip for the caregiver or teacher on every question
 - **Progress tracking** — best scores saved in the browser (no account needed)
-- **Star ratings** — earn ⭐⭐⭐ for each world
+- **Star ratings** — earn stars for each world
 - **Keyboard accessible** — works with Tab + Enter navigation
 - **Mobile friendly** — works on phones, tablets, and desktop
 - **No login, no ads, no data collection** — fully private
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 ### Option 1 – GitHub Pages (live link)
 Visit the live app at:
@@ -66,7 +66,7 @@ sunny-steps/
 
 ---
 
-## 🧩 Designed For
+## Designed For
 
 This app was created with children with Down syndrome in mind, following inclusive design principles:
 
@@ -79,7 +79,7 @@ This app was created with children with Down syndrome in mind, following inclusi
 
 ---
 
-## 🛠 Extending the App
+##  Extending the App
 
 Want to add more questions or worlds? Edit `js/data.js`:
 
@@ -109,4 +109,3 @@ MIT — free to use, share, and adapt for educational and non-commercial purpose
 
 ---
 
-*Made with ❤️ for children with Down syndrome and their families.*
